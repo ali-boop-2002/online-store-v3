@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-app.get("*", (req, res) => {
+app.get("/{*any}", (req, res) => {
   res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
