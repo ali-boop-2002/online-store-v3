@@ -17,12 +17,12 @@ import connectDB from "./config/db.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || "*",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL || "*",
+//     credentials: true,
+//   })
+// );
 
 const __dirname = path.resolve();
 app.use("/images", express.static(path.join(__dirname, "public/images")));
