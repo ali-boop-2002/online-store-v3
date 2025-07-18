@@ -16,10 +16,20 @@ dotenv.config();
 import connectDB from "./config/db.js";
 
 const app = express();
+const allowedOrigins = [
+  "https://charming-hotteok-82ab98.netlify.app",
+  "http://localhost:5173",
+];
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "*",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
