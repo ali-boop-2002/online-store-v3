@@ -16,6 +16,8 @@ dotenv.config();
 import connectDB from "./config/db.js";
 
 const app = express();
+app.set("trust proxy", true); // ✅ Trust Heroku or any reverse proxy
+
 const allowedOrigins = [
   "https://charming-hotteok-82ab98.netlify.app",
   "http://localhost:5173",
