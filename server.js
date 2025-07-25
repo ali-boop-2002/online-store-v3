@@ -20,6 +20,7 @@ app.set("trust proxy", true); // ✅ Trust Heroku or any reverse proxy
 
 const allowedOrigins = [
   "https://charming-hotteok-82ab98.netlify.app",
+  "https://online-store-v2-eight.vercel.app/",
   "http://localhost:5173",
 ];
 
