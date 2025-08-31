@@ -19,8 +19,8 @@ const app = express();
 app.set("trust proxy", true); // ✅ Trust Heroku or any reverse proxy
 
 const allowedOrigins = [
-  "https://regal-lollipop-48edbd.netlify.app/",
-  "https://online-store-v2-eight.vercel.app",
+  "https://regal-lollipop-48edbd.netlify.app",
+  "https://online-store-v3-front-end.vercel.app",
   "http://localhost:5173",
   "http://localhost:5174",
 ];

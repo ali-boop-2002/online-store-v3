@@ -6,8 +6,8 @@ const generateToken = (res, userId) => {
   });
   res.cookie("jwt", token, {
     httpOnly: true,
-    secure: true, // Set to false for local development
-    sameSite: "Lax", // Use Lax for local development
+    secure: process.env.NODE_ENV === "production", // Only secure in production
+    sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // None for cross-origin in production
     maxAge: 30 * 24 * 60 * 60 * 1000,
   });
 };
