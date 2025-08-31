@@ -6,7 +6,7 @@ const generateToken = (res, userId) => {
   });
   res.cookie("jwt", token, {
     httpOnly: true,
-    secure: false, // Set to false for local development
+    secure: true, // Set to false for local development
     sameSite: "Lax", // Use Lax for local development
     maxAge: 30 * 24 * 60 * 60 * 1000,
   });

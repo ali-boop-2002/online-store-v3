@@ -19,7 +19,7 @@ const app = express();
 app.set("trust proxy", true); // ✅ Trust Heroku or any reverse proxy
 
 const allowedOrigins = [
-  "https://charming-hotteok-82ab98.netlify.app",
+  "https://regal-lollipop-48edbd.netlify.app/",
   "https://online-store-v2-eight.vercel.app",
   "http://localhost:5173",
   "http://localhost:5174",
