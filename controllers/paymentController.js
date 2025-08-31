@@ -4,7 +4,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export const createCheckoutSession = async (req, res) => {
   try {
     const orderData = req.body;
-    console.log(orderData.orderId);
     if (
       !orderData ||
       !Array.isArray(orderData.orderItems) ||
@@ -35,6 +34,7 @@ export const createCheckoutSession = async (req, res) => {
       metadata: {
         orderId: orderData.orderId,
       },
+      locale: "en",
     });
 
     res.json({ url: session.url });

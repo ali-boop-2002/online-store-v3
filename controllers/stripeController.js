@@ -5,7 +5,6 @@ import asyncHandler from "../middleware/asyncHandler.js";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const stripeWebhookHandler = asyncHandler(async (req, res) => {
-  console.log("✅ Webhook received");
   const sig = req.headers["stripe-signature"];
   let event;
 
@@ -36,7 +35,6 @@ export const stripeWebhookHandler = asyncHandler(async (req, res) => {
       };
 
       await order.save();
-      console.log("✅ Order marked as paid");
     } else {
       console.warn("⚠️ Order not found");
     }
